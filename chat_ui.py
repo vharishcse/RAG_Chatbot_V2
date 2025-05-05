@@ -39,3 +39,12 @@ gr.ChatInterface(
     type="messages",
     examples=["Why is my trading balance not updated even after adding funds successfully?", "How do I close my account?", "What are brokerage charges?"]
 ).launch()
+
+if __name__ == "__main__":
+    import gradio as gr
+    from rag_chatbot import generate_response  # assuming this is your main function
+
+    iface = gr.Interface(fn=generate_response, inputs="text", outputs="text")
+
+    port = int(os.environ.get("PORT", 7860))  # Render sets this env var
+    iface.launch(server_name="0.0.0.0", server_port=port)
