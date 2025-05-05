@@ -1,0 +1,11 @@
+# render.yaml
+services:
+  - type: web
+    name: angelone-chatbot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python chat_ui.py
+    envVars:
+      - key: GOOGLE_API_KEY
+        sync: false
+    plan: free
