@@ -1,5 +1,6 @@
 import os
 import gradio as gr
+from rag_chatbot import generate_response  # adjust if your import differs
 from dotenv import load_dotenv
 from langchain_core.documents import Document
 from langchain_community.vectorstores import FAISS
@@ -40,11 +41,8 @@ gr.ChatInterface(
     examples=["Why is my trading balance not updated even after adding funds successfully?", "How do I close my account?", "What are brokerage charges?"]
 ).launch()
 
+iface = gr.Interface(fn=generate_response, inputs="text", outputs="text")
+
 if __name__ == "__main__":
-    import gradio as gr
-    from rag_chatbot import generate_response  # assuming this is your main function
-
-    iface = gr.Interface(fn=generate_response, inputs="text", outputs="text")
-
-    port = int(os.environ.get("PORT", 7860))  # Render sets this env var
+    port = int(os.environ.get("PORT", 7860))  # Render sets this
     iface.launch(server_name="0.0.0.0", server_port=port)
