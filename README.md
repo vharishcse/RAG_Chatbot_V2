@@ -67,7 +67,7 @@ It's lightweight, serverless, and deployable for free with Render — great for 
 1. **Clone the repository**
 
    ```bash
-   git clone (https://github.com/vharishcse/RAG_Chatbot_V2.git)
+   git clone https://github.com/vharishcse/RAG_Chatbot_V2.git
    ```
 
 2. **Set up environment**
