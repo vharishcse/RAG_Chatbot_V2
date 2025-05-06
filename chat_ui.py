@@ -41,7 +41,7 @@ if __name__ == "__main__":
         theme="soft",
         examples=[
             "Why is my trading balance not updated even after adding funds successfully?",
-            "How do I close my account?",
+            "Why am I unable to add funds using net banking?",
             "What are brokerage charges?"
         ]
     ).launch(server_name="0.0.0.0", server_port=port)
